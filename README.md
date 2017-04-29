@@ -13,4 +13,7 @@ but functions can return values, and primitive types (such as Strings) are passe
 var p = publicFunction();
 console.log(p);
 ```
-functions area reference types, and are passed or returned by reference to one shared original, instead of being passed by value
+functions area reference types, and are passed or returned by reference to one shared original, instead of being passed by value.
+
+#### what is a closure
+A function defined within another function, and then returned by outer function, retains access to any variables that were the inner function was defined, even after the outer function has terminated.
