@@ -17,3 +17,20 @@ functions area reference types, and are passed or returned by reference to one s
 
 #### what is a closure
 A function defined within another function, and then returned by outer function, retains access to any variables that were the inner function was defined, even after the outer function has terminated.
+
+### 3 Surprising Closure Behavior
+```
+var counter;
+var functions = []
+var values = [];
+var makeReturner = function(value){
+  return function(){
+    return value;
+  }
+};
+
+for(counter=0;counter<5;counter++){
+  values[counter]=counter;
+  functions[counter]=makeReturner(counter);
+}
+```
