@@ -19,6 +19,7 @@ functions area reference types, and are passed or returned by reference to one s
 A function defined within another function, and then returned by outer function, retains access to any variables that were the inner function was defined, even after the outer function has terminated.
 
 ### 3 Surprising Closure Behavior
+ES5
 ```
 var counter;
 var functions = []
@@ -33,4 +34,17 @@ for(counter=0;counter<5;counter++){
   values[counter]=counter;
   functions[counter]=makeReturner(counter);
 }
+console.log(values[0]);
+```
+ES6
+```
+var functions = []
+var values = [];
+for(let counter=0;counter<5;counter++){
+  values[counter]=counter;
+  functions[counter] = function(){
+    return counter;
+  }
+}
+console.log(values[0]);
 ```
